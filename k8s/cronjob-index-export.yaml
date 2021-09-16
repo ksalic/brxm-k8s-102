@@ -18,7 +18,7 @@ spec:
               command:
                 - /bin/sh
                 - -c
-              args: ["[ -f /host/index.zip ] && mv /host/index.zip /host/$(date +%F-%H:%M)-index.zip; wget -O /host/index.zip http://brxm.local/cms/ws/indexexport --header=\"Authorization: Basic YWRtaW46YWRtaW4=\""]
+              args: ["[ -f /host/index.zip ] && mv /host/index.zip /host/$(date +%F-%H:%M)-index.zip; wget -O /host/index.zip http://brxm.local/cms/ws/indexexport --header=\"Authorization: Basic YWRtaW46YWRtaW4=\""] #basic authentication is configured for admin/admin, not recommended for production purposes
               volumeMounts:
                 - mountPath: /host
                   name: host
