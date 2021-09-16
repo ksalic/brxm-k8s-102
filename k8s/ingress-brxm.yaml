@@ -4,15 +4,12 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/affinity: "cookie"
     nginx.ingress.kubernetes.io/affinity-mode: "persistent"
-    # https://issues.onehippo.com/browse/BRC-2714
     nginx.ingress.kubernetes.io/session-cookie-max-age: "1860"
     nginx.ingress.kubernetes.io/session-cookie-expires: "1860"
     nginx.ingress.kubernetes.io/session-cookie-name: "SERVERID"
     # our internal io domains should have / cookie path always to work with Channel manager
     nginx.ingress.kubernetes.io/session-cookie-path: /
     kubernetes.io/ingress.class: "nginx"
-    # BRC-3373 we added connection timeout and max-fails configuration in order to not affect other sessions
-    # Make sure  this file is in sync domain-templates/domain-site.yml.template.
     nginx.ingress.kubernetes.io/proxy-read-timeout: "180"
     nginx.ingress.kubernetes.io/upstream-max-fails: "250"
     nginx.ingress.kubernetes.io/upstream-fail-timeout: "1s"

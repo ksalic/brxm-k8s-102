@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: brxm-repo-maintainer
 spec:
-  schedule: "*/5 * * * *" #every 5 minutes #" 0 */4 * * *" #every 4 hours
+  schedule: "*/2 * * * *" #every 2 minutes, only for local testing, production env will most likely need something like once or twice a day
   jobTemplate:
     spec:
       template:

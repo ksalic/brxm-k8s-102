@@ -19,7 +19,7 @@ spec:
           hostnames:
             - "brxm.local"
       initContainers:
-        - name: check-mysql
+        - name: check-mysql #check if mysql is up and running
           image: busybox
           env:
             - name: MYSQL_DB_HOST
